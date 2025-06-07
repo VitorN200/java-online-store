@@ -2,12 +2,12 @@ public class Produto {
 
     private String nome;
     private double preco;
-    private String unidade;
+    private String counteudo;
 
-    public Produto(String nome, double preco, String unidade) {
+    public Produto(String nome, double preco, String counteudo) {
         this.nome = nome;
         this.preco = preco;
-        this.unidade = unidade;
+        this.counteudo = counteudo;
     }
 
     public String getNome() {
@@ -20,7 +20,7 @@ public class Produto {
 
     public void exibirDados() {
         System.out.println("Nome: " + nome);
-        System.out.println("Unidade: " + unidade);
+        System.out.println("Unidade: " + counteudo);
         System.out.println("Preço: R$ " + preco);
         System.out.println();
     }
