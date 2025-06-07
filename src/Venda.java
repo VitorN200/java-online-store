@@ -9,15 +9,23 @@ public class Venda {
         this.itens = new ArrayList<>();
     }
 
-    public void adicionarItem(ItemVenda item) {
+    public void adicionarItem(Produto produto, int quantidade) {
+        ItemVenda item = new ItemVenda(produto, quantidade);
         itens.add(item);
+    }
+
+    public double calcularTotal() {
+        double total = 0.0;
+        for (ItemVenda item : itens) {
+            item.exibirDados();
+            total += item.getValorTotal();
+        }
+        return Math.round(total * 100.0) / 100.0;
     }
 
     public void exibirDados() {
         System.out.println("Usuário: " + usuario.getNome());
         System.out.println("Itens da Venda:");
-        for (ItemVenda item : itens) {
-            item.exibirDados();
-        }
+        System.out.println("Total da Venda: R$ " + calcularTotal() + "\n");	
     }
 }
